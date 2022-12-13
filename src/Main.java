@@ -15,6 +15,14 @@ public class Main {
         checkDevice(1, 2022);
         checkDevice(3, 2022); // Ошибка
 
+        // Разделитель
+        System.out.println();
+
+        // Задание 3
+        System.out.println("Потребуется дней: " + calcDeliveryDays(15));
+        System.out.println("Потребуется дней: " + calcDeliveryDays(55));
+        System.out.println("Потребуется дней: " + calcDeliveryDays(95));
+        System.out.println("Потребуется дней: " + calcDeliveryDays(105));
     }
 
     public static void checkLeapYearAndPrint(int year){
@@ -60,5 +68,18 @@ public class Main {
         } else {
             System.out.println("Установите приложение для " + osName + " по ссылке");
         }
+    }
+
+    public static int calcDeliveryDays(int distance){
+
+        int days = 0;
+
+        if (distance < 20){
+            days = 1;
+        } else {
+            days = ((distance + 20) / 40) + 1;
+        }
+
+        return days;
     }
 }
